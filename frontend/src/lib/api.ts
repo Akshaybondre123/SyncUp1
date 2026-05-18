@@ -1,6 +1,5 @@
 import type { Feed, FeedResponse } from "@/types/feed";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+import { API_URL } from "@/lib/config";
 
 export async function fetchFeeds(): Promise<FeedResponse> {
   const res = await fetch(`${API_URL}/feed`, { cache: "no-store" });
